@@ -1,0 +1,49 @@
+header {
+  margin-bottom: 3rem;
+}
+
+.container {
+  padding: 0 2em;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.content-sidebar {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+/* The flex-basis values for both main and aside selectors define the breaking point between large and small screens */
+main {
+  flex-basis: 50%;
+  flex-grow: 9999;
+}
+
+aside {
+  padding: 1em;
+  border: 4px solid black;
+}
+
+/* It's better to make this style separate from the "aside" selector to make it applicable on any element not just the aside selector  */
+.adaptable-sidebar {
+  flex-basis: 20rem;
+  flex-grow: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+/* Another approach is to name this class "full-widht" and give it to any element inside the "adaptable-sidebar" that we want it to take a full width*/
+.adaptable-sidebar > * {
+  flex-basis: 100%;
+}
+
+/* flex-basis has a such tiny value (not a certain percentage like 50%) to make this style applicable on any number of elements not just 2 cards*/
+.adaptable-sidebar > .card {
+  flex-basis: 1%;
+  flex-grow: 1;
+}
+
